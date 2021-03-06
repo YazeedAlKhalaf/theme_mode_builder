@@ -6,7 +6,7 @@ class ThemeModeBuilderConfig {
     await HiveStorageService().init();
   }
 
-  static Future<void> toggleTheme() async {
+  static bool isDarkTheme() {
     final Box themeBox = HiveStorageService().getBox(
       boxName: "theme_box",
     );
@@ -15,9 +15,17 @@ class ThemeModeBuilderConfig {
       "is_dark_key",
     );
 
+    return isDarkTheme ?? false;
+  }
+
+  static Future<void> toggleTheme() async {
+    final Box themeBox = HiveStorageService().getBox(
+      boxName: "theme_box",
+    );
+
     await themeBox.put(
       "is_dark_key",
-      !isDarkTheme,
+      !isDarkTheme(),
     );
   }
 }
