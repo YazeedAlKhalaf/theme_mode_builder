@@ -5,9 +5,16 @@ import 'package:stacked/stacked.dart';
 
 import 'theme_mode_builder_model.dart';
 
+/// [ThemeModeBuilder] constructor, you need to provide the [builder].
 class ThemeModeBuilder extends StatelessWidget {
-  final Function(BuildContext, ThemeMode) builder;
+  /// [builder] requires you to return a [Widget] and provides two arguments:
+  ///
+  /// The two arguments are:
+  /// * [BuildContext], context; the thing that no body knows what it is
+  /// * [ThemeMode], tells you what is the current theme mode
+  final Widget Function(BuildContext, ThemeMode) builder;
 
+  /// [ThemeModeBuilder] constructor, you need to provide the [builder].
   const ThemeModeBuilder({
     Key key,
     @required this.builder,
@@ -25,18 +32,19 @@ class ThemeModeBuilder extends StatelessWidget {
         ThemeModeBuilderModel model,
         Widget child,
       ) {
-        return ValueListenableBuilder(
+        return ValueListenableBuilder<Box<bool>>(
           valueListenable: model.themeBox.listenable(),
           builder: (
             BuildContext context,
-            Box box,
+            Box<bool> box,
             Widget child,
           ) {
-            bool isDark = box.get(
+            final bool isDark = box.get(
               "is_dark_key",
               defaultValue: false,
             );
-            ThemeMode themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
+            final ThemeMode themeMode =
+                isDark ? ThemeMode.dark : ThemeMode.light;
 
             return builder(context, themeMode);
           },

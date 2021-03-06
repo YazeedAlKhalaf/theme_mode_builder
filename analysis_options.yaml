@@ -1,0 +1,6 @@
+include: package:lint/analysis_options_package.yaml
+
+linter:
+  rules:
+    # Good packages document everything
+    public_member_api_docs: true
