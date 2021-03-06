@@ -12,8 +12,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  stacked: ^1.9.5
+
+  hive: ^2.0.0
+  hive_flutter: ^1.0.0
+
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
 
 flutter:
