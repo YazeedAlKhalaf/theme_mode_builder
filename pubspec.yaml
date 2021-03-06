@@ -1,0 +1,19 @@
+name: theme_mode_builder
+description: A Flutter package for handling theme in an app and also saving it on the device in a hive box.
+version: 0.0.1
+author: Yazeed AlKhalaf
+homepage:
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
