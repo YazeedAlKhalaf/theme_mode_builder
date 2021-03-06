@@ -54,3 +54,17 @@ class MyCoolApp extends StatelessWidget {
   }
 }
 ```
+
+Finally, if you want to change the `themeMode` you just call:
+
+```dart
+await ThemeModeBuilderConfig.toggleTheme();
+```
+
+And the theme will change instantly given you followed the steps above correctly 🎉.
+
+To check if the current theme is dark or not, you use this simple call:
+
+```dart
+final bool isDarkTheme = ThemeModeBuilderConfig.isDarkTheme();
+```
