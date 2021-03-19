@@ -1,5 +1,7 @@
 ## [unreleased] - TODO: release date here
 
+- Add `example` app
+
 ## [0.0.2] - 7 Mar, 2021
 
 - Add `toggleTheme`
