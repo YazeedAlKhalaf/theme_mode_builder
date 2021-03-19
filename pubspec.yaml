@@ -14,7 +14,7 @@ dependencies:
 
   hive: ^2.0.0
   hive_flutter: ^1.0.0
-  stacked: ^1.9.5
+  stacked: ^1.9.7
 
 dev_dependencies:
   lint: ^1.5.3
