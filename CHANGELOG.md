@@ -2,6 +2,7 @@
 
 - Add `example` app
 - Upgrade all dependencies to latest!
+- Fix typos in `README.md`
 
 ## [0.0.2] - 7 Mar, 2021
 

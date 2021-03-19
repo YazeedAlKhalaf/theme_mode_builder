@@ -1,11 +1,11 @@
-# Theme Mode Builder
+# Theme Mode Builder 🚀
 
 > 1. I created this package to help standardize my apps way of theme handling.
-> 2. The package uses [Stacked](https://pub.dev/packages/stacked) architecture which is an over kill for this small package but **YOLO**.
+> 2. The package uses [Stacked](https://pub.dev/packages/stacked) architecture which is an overkill for this small package but **YOLO**.
 
 ## 📚 How to Use
 
-First run the initialization which is asynchronous so you will need to make you `main()` method a `Future`:
+First run the initialization which is asynchronous so you will need to change the return type of your `main()` method from `void` to `Future<void>`:
 
 ```dart
 Future<void> main() async {
@@ -20,9 +20,11 @@ Future<void> main() async {
 }
 ```
 
-Then you just wrap your `MaterialApp` widget with the `ThemeModeBuilder` and return the `MaterialApp` widget from the `builder`. The `builder` gives you two arguments, `builder: (BuildContext context, ThemeMode themeMode) {}`. Pass the `themeMode` to `themeMode` on your `MaterialApp`.
+Then just wrap your `MaterialApp` widget with the `ThemeModeBuilder` and return the `MaterialApp` widget from the `builder`.
+The `builder` gives you two arguments, `builder: (BuildContext context, ThemeMode themeMode) {}`.
+Pass the `themeMode` to `themeMode` on your `MaterialApp`.
 
-Now this code below explains better than I do 🙈🌹:
+Now this code below explains better than I do 🙈🚀😂:
 
 ```dart
 import "package:flutter/material.dart";
@@ -55,7 +57,7 @@ class MyCoolApp extends StatelessWidget {
 }
 ```
 
-Finally, if you want to change the `themeMode` you just call:
+### If you want to change the `themeMode` you just call:
 
 ```dart
 await ThemeModeBuilderConfig.toggleTheme();
@@ -63,7 +65,7 @@ await ThemeModeBuilderConfig.toggleTheme();
 
 And the theme will change instantly given you followed the steps above correctly 🎉.
 
-To check if the current theme is dark or not, you use this simple call:
+### Finally, To check if the current theme is dark or not, you use this simple call:
 
 ```dart
 final bool isDarkTheme = ThemeModeBuilderConfig.isDarkTheme();
