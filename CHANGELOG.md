@@ -1,4 +1,4 @@
-## [unreleased] - TODO: release date here
+## [0.0.3] - 19 Mar, 2021
 
 - Add `example` app
 - Upgrade all dependencies to latest!
