@@ -40,46 +40,60 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            /// toggle functionality
-            ElevatedButton(
-              onPressed: () async {
-                await ThemeModeBuilderConfig.toggleTheme();
-              },
-              child: Text(
-                'Toggle Theme',
-              ),
-            ),
-
-            /// separate buttons functionality
-            Row(
-              children: <Widget>[
-                ElevatedButton(
-                  onPressed: ThemeModeBuilderConfig.isDarkTheme()
-                      ? () async {
-                          await ThemeModeBuilderConfig.toggleTheme();
-                        }
-                      : null,
-                  child: Text(
-                    'Light Theme',
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: ThemeModeBuilderConfig.isDarkTheme()
-                      ? null
-                      : () async {
-                          await ThemeModeBuilderConfig.toggleTheme();
-                        },
-                  child: Text(
-                    'Dark Theme',
-                  ),
-                ),
-              ],
-            ),
-          ],
+      appBar: AppBar(
+        title: Text(
+          'Theme Mode Builder Example',
         ),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          /// toggle functionality
+          ElevatedButton(
+            onPressed: () async {
+              await ThemeModeBuilderConfig.toggleTheme();
+            },
+            child: Text(
+              'Toggle Theme',
+            ),
+          ),
+
+          /// spacing to make things look cool!
+          const SizedBox(height: 15),
+
+          /// separate buttons functionality
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              /// changes theme to light mode
+              ElevatedButton(
+                onPressed: ThemeModeBuilderConfig.isDarkTheme()
+                    ? () async {
+                        await ThemeModeBuilderConfig.toggleTheme();
+                      }
+                    : () {},
+                child: Text(
+                  'Light Theme',
+                ),
+              ),
+
+              /// spacing to make things look cool!
+              const SizedBox(width: 15),
+
+              /// changes theme to darl mode
+              ElevatedButton(
+                onPressed: ThemeModeBuilderConfig.isDarkTheme()
+                    ? () {}
+                    : () async {
+                        await ThemeModeBuilderConfig.toggleTheme();
+                      },
+                child: Text(
+                  'Dark Theme',
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
