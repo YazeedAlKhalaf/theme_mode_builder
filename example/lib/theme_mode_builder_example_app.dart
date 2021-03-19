@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:theme_mode_builder/theme_mode_builder.dart';
 
-/// this [ExampleApp] widget is the wrapper for out [MaterialApp] widget
-/// and our [ThemeModeBuilder] widget. It is realy great!
-class ExampleApp extends StatelessWidget {
+/// this [ThemeModeBuilderExampleApp] widget is the wrapper for our
+/// [MaterialApp] widget and our [ThemeModeBuilder] widget.
+/// It is realy great!
+class ThemeModeBuilderExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ThemeModeBuilder(
