@@ -2,10 +2,27 @@
 
 > 1. I created this package to help standardize my apps way of theme handling.
 > 2. The package uses [Stacked](https://pub.dev/packages/stacked) architecture which is an overkill for this small package but **YOLO**.
-
+>
 > Web Demo: <a href="https://theme-mode-builder.netlify.app/" target="_blank">https://theme-mode-builder.netlify.app/</a>
 
 ## 📚 How to Use
+
+### Table of contents
+
+1. [Video](#Video)
+2. [Guide](#Guide)
+
+### Video:
+
+<div style="width: 500px;">
+  <a href="https://youtu.be/yDwZHzBRsqQ" target="_blank">
+    <img src="https://raw.githubusercontent.com/YazeedAlKhalaf/theme_mode_builder/main/readme_images/explainer_video_thumbnail.jpg" alt="Theme Mode Builder | Explaining Flutter Packages" />
+  </a>
+</div>
+
+</br>
+
+### Guide:
 
 First run the initialization which is asynchronous so you will need to change the return type of your `main()` method from `void` to `Future<void>`:
 

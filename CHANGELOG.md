@@ -3,6 +3,7 @@
 - Update `example` app
 - Add web demo
 - Migrate to null safety
+- Add video link that explains how to use package
 
 ## [0.0.3] - 19 Mar, 2021
 
