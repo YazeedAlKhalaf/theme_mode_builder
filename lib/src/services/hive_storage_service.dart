@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -21,7 +20,7 @@ class HiveStorageService {
 
   /// [openBox] opens a hive box given you provide the name of the box.
   Future<Box<Y>> openBox<Y>({
-    @required String boxName,
+    required String boxName,
   }) async {
     final Box<Y> box = await Hive.openBox<Y>(
       boxName,
@@ -31,7 +30,7 @@ class HiveStorageService {
 
   /// [getBox] gets a hive box given you provide the name of the box.
   Box<Y> getBox<Y>({
-    @required String boxName,
+    required String boxName,
   }) {
     return Hive.box<Y>(boxName);
   }

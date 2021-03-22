@@ -6,10 +6,10 @@ import 'package:theme_mode_builder/src/services/hive_storage_service.dart';
 class ThemeModeBuilderModel extends CustomBaseViewModel {
   final HiveStorageService _hiveStorageService = HiveStorageService();
 
-  Box<bool> _themeBox;
+  Box<bool>? _themeBox;
 
   /// [themeBox] is a getter for the theme box of type `bool`.
-  Box<bool> get themeBox => _themeBox;
+  Box<bool>? get themeBox => _themeBox;
 
   /// [setThemeBox] sets the private variable [_themeBox] with the
   /// the provided new value.

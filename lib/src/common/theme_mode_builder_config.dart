@@ -21,7 +21,7 @@ class ThemeModeBuilderConfig {
       boxName: "theme_box",
     );
 
-    final bool isDarkTheme = themeBox.get(
+    final bool? isDarkTheme = themeBox.get(
       "is_dark_key",
     );
 
