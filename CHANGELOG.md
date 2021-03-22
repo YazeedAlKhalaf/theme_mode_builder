@@ -1,6 +1,7 @@
 ## [unreleased] - unreleased
 
 - Update `example` app
+- Add web demo
 
 ## [0.0.3] - 19 Mar, 2021
 

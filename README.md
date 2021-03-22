@@ -3,6 +3,8 @@
 > 1. I created this package to help standardize my apps way of theme handling.
 > 2. The package uses [Stacked](https://pub.dev/packages/stacked) architecture which is an overkill for this small package but **YOLO**.
 
+> Web Demo: <a href="https://theme-mode-builder.netlify.app/" target="_blank">https://theme-mode-builder.netlify.app/</a>
+
 ## 📚 How to Use
 
 First run the initialization which is asynchronous so you will need to change the return type of your `main()` method from `void` to `Future<void>`:
