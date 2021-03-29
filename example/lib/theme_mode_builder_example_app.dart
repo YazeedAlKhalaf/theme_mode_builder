@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
         children: <Widget>[
           /// text to show current mode
           Text(
-            "Current Mode: ${ThemeModeBuilderConfig.isDarkTheme() ? "Dark" : "Light"}",
+            "Current Mode: ${ThemeModeBuilderConfig.getThemeMode().toString().split(".").last.toUpperCase()}",
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
@@ -80,15 +80,27 @@ class _HomeState extends State<Home> {
             children: <Widget>[
               /// changes theme to light mode
               ElevatedButton.icon(
+                icon: Icon(Icons.phone_android),
+                label: Text(
+                  "System Mode",
+                ),
+                onPressed: () async {
+                  await ThemeModeBuilderConfig.setSystem();
+                },
+              ),
+
+              /// spacing to make things look cool!
+              const SizedBox(width: 15),
+
+              /// changes theme to darl mode
+              ElevatedButton.icon(
                 icon: Icon(Icons.lightbulb),
                 label: Text(
                   "Light Mode",
                 ),
-                onPressed: ThemeModeBuilderConfig.isDarkTheme()
-                    ? () async {
-                        await ThemeModeBuilderConfig.toggleTheme();
-                      }
-                    : () {},
+                onPressed: () async {
+                  await ThemeModeBuilderConfig.setLight();
+                },
               ),
 
               /// spacing to make things look cool!
@@ -100,11 +112,9 @@ class _HomeState extends State<Home> {
                 label: Text(
                   "Dark Mode",
                 ),
-                onPressed: ThemeModeBuilderConfig.isDarkTheme()
-                    ? () {}
-                    : () async {
-                        await ThemeModeBuilderConfig.toggleTheme();
-                      },
+                onPressed: () async {
+                  await ThemeModeBuilderConfig.setDark();
+                },
               ),
             ],
           ),
