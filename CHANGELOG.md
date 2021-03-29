@@ -8,6 +8,7 @@
 - Put all constant strings in `Constants` class
 - Enhance README.md
 - Add new API, now you can set light and dark mode with ready functions
+- Add new API, now you can set system mode and get theme mode with ready functions
 
 ## [0.0.3] - 19 Mar, 2021
 
