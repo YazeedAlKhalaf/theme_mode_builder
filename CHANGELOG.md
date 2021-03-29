@@ -4,6 +4,7 @@
 - Add web demo
 - Migrate to null safety
 - Add video link that explains how to use package
+- Upgrade dependencies
 
 ## [0.0.3] - 19 Mar, 2021
 
