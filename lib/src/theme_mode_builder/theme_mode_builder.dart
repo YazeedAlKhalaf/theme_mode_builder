@@ -33,7 +33,7 @@ class ThemeModeBuilder extends StatelessWidget {
       builder: (
         BuildContext context,
         ThemeModeBuilderModel model,
-        Widget child,
+        Widget? child,
       ) {
         return ValueListenableBuilder<Box<bool>>(
           valueListenable: model.themeBox!.listenable(),
