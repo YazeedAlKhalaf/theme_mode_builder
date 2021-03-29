@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:theme_mode_builder/src/common/constants.dart';
 import 'package:theme_mode_builder/src/services/hive_storage_service.dart';
@@ -46,30 +47,54 @@ class ThemeModeBuilderConfig {
   }
 
   /// [setDark] changes the theme to dark.
-  /// The method checks if the theme is dark or not before running.
   static Future<void> setDark() async {
-    if (!isDarkTheme()) {
-      final Box<bool> themeBox = HiveStorageService().getBox<bool>(
-        boxName: Constants.themeBox,
-      );
-      await themeBox.put(
-        Constants.isDarkKey,
-        true,
-      );
-    }
+    final Box<bool> themeBox = HiveStorageService().getBox<bool>(
+      boxName: Constants.themeBox,
+    );
+    await themeBox.put(
+      Constants.isDarkKey,
+      true,
+    );
   }
 
   /// [setLight] changes the theme to light.
-  /// The method checks if the theme is light or not before running.
   static Future<void> setLight() async {
-    if (!isDarkTheme()) {
-      final Box<bool> themeBox = HiveStorageService().getBox<bool>(
-        boxName: Constants.themeBox,
-      );
-      await themeBox.put(
-        Constants.isDarkKey,
-        false,
-      );
+    final Box<bool> themeBox = HiveStorageService().getBox<bool>(
+      boxName: Constants.themeBox,
+    );
+    await themeBox.put(
+      Constants.isDarkKey,
+      false,
+    );
+  }
+
+  /// [setSystem] deletes the key of dark mode.
+  static Future<void> setSystem() async {
+    final Box<bool> themeBox = HiveStorageService().getBox<bool>(
+      boxName: Constants.themeBox,
+    );
+    await themeBox.delete(
+      Constants.isDarkKey,
+    );
+  }
+
+  /// [getThemeMode] returns the theme mode based on the saved value.
+  static ThemeMode getThemeMode() {
+    final Box<bool> themeBox = HiveStorageService().getBox<bool>(
+      boxName: Constants.themeBox,
+    );
+
+    final bool? isDarkMode = themeBox.get(
+      Constants.isDarkKey,
+    );
+
+    switch (isDarkMode) {
+      case true:
+        return ThemeMode.dark;
+      case false:
+        return ThemeMode.light;
+      default:
+        return ThemeMode.system;
     }
   }
 }
