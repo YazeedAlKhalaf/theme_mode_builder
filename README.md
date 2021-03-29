@@ -25,7 +25,7 @@
 1. [Video](#Video)
 2. [Guide](#Guide)
 
-### Video:
+### Video: (A bit outdated, for v0.0.3)
 
 <div style="width: 500px;">
   <a href="https://youtu.be/yDwZHzBRsqQ" target="_blank">
@@ -109,6 +109,18 @@ To change to light mode:
 
 ```dart
 await ThemeModeBuilderConfig.setLight();
+```
+
+To change to system mode:
+
+```dart
+await ThemeModeBuilderConfig.setSystem();
+```
+
+### To get the theme mode you can run:
+
+```dart
+final ThemeMode themeMode = ThemeModeBuilderConfig.getThemeMode();
 ```
 
 ### Finally, To check if the current theme is dark or not, you use this simple call:
