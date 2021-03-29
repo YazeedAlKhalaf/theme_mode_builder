@@ -44,4 +44,32 @@ class ThemeModeBuilderConfig {
       !isDarkTheme(),
     );
   }
+
+  /// [setDark] changes the theme to dark.
+  /// The method checks if the theme is dark or not before running.
+  static Future<void> setDark() async {
+    if (!isDarkTheme()) {
+      final Box<bool> themeBox = HiveStorageService().getBox<bool>(
+        boxName: Constants.themeBox,
+      );
+      await themeBox.put(
+        Constants.isDarkKey,
+        true,
+      );
+    }
+  }
+
+  /// [setLight] changes the theme to light.
+  /// The method checks if the theme is light or not before running.
+  static Future<void> setLight() async {
+    if (!isDarkTheme()) {
+      final Box<bool> themeBox = HiveStorageService().getBox<bool>(
+        boxName: Constants.themeBox,
+      );
+      await themeBox.put(
+        Constants.isDarkKey,
+        false,
+      );
+    }
+  }
 }

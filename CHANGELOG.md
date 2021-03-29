@@ -7,6 +7,7 @@
 - Upgrade dependencies
 - Put all constant strings in `Constants` class
 - Enhance README.md
+- Add new API, now you can set light and dark mode with ready functions
 
 ## [0.0.3] - 19 Mar, 2021
 
