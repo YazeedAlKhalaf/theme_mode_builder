@@ -1,5 +1,7 @@
 ## [unreleased] - unreleased
 
+## [1.0.0] - 29 Mar, 2021
+
 - Update `example` app
 - Add web demo
 - Migrate to null safety
