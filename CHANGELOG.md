@@ -6,6 +6,7 @@
 - Add video link that explains how to use package
 - Upgrade dependencies
 - Put all constant strings in `Constants` class
+- Enhance README.md
 
 ## [0.0.3] - 19 Mar, 2021
 

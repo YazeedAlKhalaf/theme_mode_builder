@@ -1,9 +1,22 @@
 # Theme Mode Builder 🚀
 
+![Pub Version](https://img.shields.io/pub/v/theme_mode_builder?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/YazeedAlKhalaf/theme_mode_builder?style=for-the-badge)
+![GitHub Issues](https://img.shields.io/github/issues/YazeedAlKhalaf/theme_mode_builder?style=for-the-badge)
+![GitHub Pull Requests](https://img.shields.io/github/issues-pr/YazeedAlKhalaf/theme_mode_builder?style=for-the-badge)
+
 > 1. I created this package to help standardize my apps way of theme handling.
 > 2. The package uses [Stacked](https://pub.dev/packages/stacked) architecture which is an overkill for this small package but **YOLO**.
 >
 > Web Demo: <a href="https://theme-mode-builder.netlify.app/" target="_blank">https://theme-mode-builder.netlify.app/</a>
+
+### Features:
+
+- 🚀 Cross platform: mobile, desktop, browser
+- ❤ Simple, powerful, intuitive API
+- 🛡 Null Safety
+- 🎈 **No** native dependencies
+- 🔋 Batteries included
 
 ## 📚 How to Use
 
