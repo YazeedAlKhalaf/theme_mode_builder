@@ -5,6 +5,7 @@
 - Migrate to null safety
 - Add video link that explains how to use package
 - Upgrade dependencies
+- Put all constant strings in `Constants` class
 
 ## [0.0.3] - 19 Mar, 2021
 

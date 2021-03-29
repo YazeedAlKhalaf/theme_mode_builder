@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:theme_mode_builder/src/common/constants.dart';
 
 /// [HiveStorageService] is a service used to abstract the complexity of using
 /// the `hive` package directly. It gives higher level functions
@@ -14,7 +15,7 @@ class HiveStorageService {
 
     /// open boxes
     await openBox<bool>(
-      boxName: "theme_box",
+      boxName: Constants.themeBox,
     );
   }
 

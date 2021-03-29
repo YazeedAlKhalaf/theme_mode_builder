@@ -4,6 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 // TODO: make sure to solve this
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:stacked/stacked.dart';
+import 'package:theme_mode_builder/src/common/constants.dart';
 
 import 'theme_mode_builder_model.dart';
 
@@ -42,7 +43,7 @@ class ThemeModeBuilder extends StatelessWidget {
             Widget? child,
           ) {
             final bool? isDark = box?.get(
-              "is_dark_key",
+              Constants.isDarkKey,
               defaultValue: false,
             );
             final ThemeMode themeMode =

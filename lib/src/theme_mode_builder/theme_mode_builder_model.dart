@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:theme_mode_builder/src/common/constants.dart';
 import 'package:theme_mode_builder/src/common/custom_base_view_model.dart';
 import 'package:theme_mode_builder/src/services/hive_storage_service.dart';
 
@@ -21,7 +22,7 @@ class ThemeModeBuilderModel extends CustomBaseViewModel {
   /// [init] gets the theme box and sets it using [setThemeBox].
   void init() {
     final Box<bool> themeBoxTemp = _hiveStorageService.getBox<bool>(
-      boxName: "theme_box",
+      boxName: Constants.themeBox,
     );
 
     setThemeBox(themeBoxTemp);
