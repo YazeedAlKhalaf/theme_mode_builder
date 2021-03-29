@@ -97,6 +97,20 @@ await ThemeModeBuilderConfig.toggleTheme();
 
 And the theme will change instantly given you followed the steps above correctly 🎉.
 
+### Want more customization?
+
+To change to dark mode:
+
+```dart
+await ThemeModeBuilderConfig.setDark();
+```
+
+To change to light mode:
+
+```dart
+await ThemeModeBuilderConfig.setLight();
+```
+
 ### Finally, To check if the current theme is dark or not, you use this simple call:
 
 ```dart
