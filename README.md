@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content: center;">
-  <img src="readme_images/theme_mode_builder_logo.png" width="150px"  />
+  <img src="https://raw.githubusercontent.com/YazeedAlKhalaf/theme_mode_builder/main/readme_images/theme_mode_builder_logo.png" width="150px"  />
 </div>
 
 # Theme Mode Builder 🚀
