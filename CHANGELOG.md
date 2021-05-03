@@ -2,6 +2,7 @@
 
 - Added `subDir` argument to `ThemeModeBuilderConfig.ensureInitialized()` to allow customization of the location of the `theme_box` boxes.
 - Add new logo!
+- Upgrade all dependencies to latest versions.
 
 ## [1.0.0] - 29 Mar, 2021
 
