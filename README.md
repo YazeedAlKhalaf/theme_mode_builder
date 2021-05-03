@@ -1,3 +1,7 @@
+<div style="display: flex; justify-content: center;">
+  <img src="readme_images/theme_mode_builder_logo.png" width="150px"  />
+</div>
+
 # Theme Mode Builder 🚀
 
 ![Pub Version](https://img.shields.io/pub/v/theme_mode_builder?style=for-the-badge)
