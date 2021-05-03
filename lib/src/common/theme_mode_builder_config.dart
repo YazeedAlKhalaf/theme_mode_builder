@@ -8,8 +8,17 @@ import 'package:theme_mode_builder/src/theme_mode_builder/theme_mode_builder.dar
 /// the [ThemeModeBuilder] and change theme or check if the theme is dark.
 class ThemeModeBuilderConfig {
   /// [ensureInitialized] initialized the [HiveStorageService]
-  static Future<void> ensureInitialized() async {
-    await HiveStorageService().init();
+  ///
+  /// You could provide a [subDir] where the boxes should be stored, else the
+  /// boxes will be in the documents directory.
+  /// So for example if [subDir] is `Theme Mode Builder Example`, the directory
+  /// where the boxes will be saved is `~/Documents/Theme Mode Builder Example`.
+  static Future<void> ensureInitialized({
+    String? subDir,
+  }) async {
+    await HiveStorageService().init(
+      subDir: subDir,
+    );
   }
 
   /// [isDarkTheme] check if the current theme mode is dark or not and returns

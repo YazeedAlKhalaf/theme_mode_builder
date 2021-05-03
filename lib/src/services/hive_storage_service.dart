@@ -8,10 +8,15 @@ import 'package:theme_mode_builder/src/common/constants.dart';
 class HiveStorageService {
   /// [init] initializes [Hive] and opens boxes.
   ///
+  /// You must provide a [subDir] where the boxes should be stored, else the
+  /// boxes will be in the documents directory.
+  ///
   /// Boxes opened:
   /// * theme_box
-  Future<void> init() async {
-    await Hive.initFlutter();
+  Future<void> init({
+    required String? subDir,
+  }) async {
+    await Hive.initFlutter(subDir);
 
     /// open boxes
     await openBox<bool>(

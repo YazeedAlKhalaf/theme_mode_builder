@@ -45,7 +45,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   /// initialize theme mode builder
-  await ThemeModeBuilderConfig.ensureInitialized();
+  await ThemeModeBuilderConfig.ensureInitialized(
+    subDir: "Theme Mode Builder Example",
+  );
 
   /// Runs the app :)
   runApp(MyCoolApp());

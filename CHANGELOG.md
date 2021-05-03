@@ -1,5 +1,7 @@
 ## [unreleased] - unreleased
 
+- Added `subDir` argument to `ThemeModeBuilderConfig.ensureInitialized()` to allow customization of the location of the `theme_box` boxes.
+
 ## [1.0.0] - 29 Mar, 2021
 
 - Update `example` app
