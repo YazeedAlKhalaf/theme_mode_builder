@@ -1,5 +1,7 @@
 ## [unreleased] - unreleased
 
+## [1.0.2] - 2 Jul, 2021
+
 - Fix README.md image logo.
 - Upgrade all dependencies to latest versions.
 
