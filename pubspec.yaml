@@ -13,8 +13,8 @@ dependencies:
     sdk: flutter
 
   hive: ^2.0.4
-  hive_flutter: ^1.0.0
-  stacked: ^2.1.1
+  hive_flutter: ^1.1.0
+  stacked: ^2.2.1
 
 dev_dependencies:
   lint: ^1.5.3
