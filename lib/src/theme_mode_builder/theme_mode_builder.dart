@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-// TODO: make sure to solve this
-// ignore: import_of_legacy_library_into_null_safe
-import 'package:stacked/stacked.dart';
+import 'package:provider/provider.dart';
 import 'package:theme_mode_builder/src/common/theme_mode_builder_config.dart';
 
 import 'theme_mode_builder_model.dart';
@@ -25,18 +23,22 @@ class ThemeModeBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<ThemeModeBuilderModel>.reactive(
-      viewModelBuilder: () => ThemeModeBuilderModel(),
-      onModelReady: (ThemeModeBuilderModel model) {
-        model.init();
+    return ChangeNotifierProvider<ThemeModeBuilderModel>(
+      create: (BuildContext context) {
+        final ThemeModeBuilderModel themeModeBuilderModel =
+            ThemeModeBuilderModel();
+
+        themeModeBuilderModel.init();
+
+        return themeModeBuilderModel;
       },
       builder: (
         BuildContext context,
-        ThemeModeBuilderModel model,
         Widget? child,
       ) {
         return ValueListenableBuilder<Box<bool>>(
-          valueListenable: model.themeBox!.listenable(),
+          valueListenable:
+              context.read<ThemeModeBuilderModel>().themeBox!.listenable(),
           builder: (
             BuildContext? context,
             Box<bool>? box,

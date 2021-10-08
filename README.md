@@ -9,8 +9,7 @@
 ![GitHub Issues](https://img.shields.io/github/issues/YazeedAlKhalaf/theme_mode_builder?style=for-the-badge)
 ![GitHub Pull Requests](https://img.shields.io/github/issues-pr/YazeedAlKhalaf/theme_mode_builder?style=for-the-badge)
 
-> 1. I created this package to help standardize my apps way of theme handling.
-> 2. The package uses [Stacked](https://pub.dev/packages/stacked) architecture which is an overkill for this small package but **YOLO**.
+> I created this package to help standardize my apps way of theme handling.
 >
 > Web Demo: <a href="https://theme-mode-builder.netlify.app/" target="_blank">https://theme-mode-builder.netlify.app/</a>
 
