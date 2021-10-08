@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
-import 'package:theme_mode_builder/src/common/constants.dart';
-import 'package:theme_mode_builder/src/common/custom_base_view_model.dart';
-import 'package:theme_mode_builder/src/services/hive_storage_service.dart';
+import 'package:theme_mode_builder/common/constants.dart';
+import 'package:theme_mode_builder/common/custom_base_view_model.dart';
+import 'package:theme_mode_builder/services/hive_storage_service.dart';
 
 /// [ThemeModeBuilderModel] is where all the logic of the builder exists.
 class ThemeModeBuilderModel extends CustomBaseViewModel {

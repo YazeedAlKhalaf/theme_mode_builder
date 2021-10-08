@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:theme_mode_builder/src/common/theme_mode_builder_config.dart';
+import 'package:theme_mode_builder/common/theme_mode_builder_config.dart';
 
 import 'theme_mode_builder_model.dart';
 
