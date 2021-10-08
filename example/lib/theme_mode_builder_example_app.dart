@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Theme Mode Builder Example',
         ),
       ),
@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
           /// text to show current mode
           Text(
             "Current Mode: ${ThemeModeBuilderConfig.getThemeMode().toString().split(".").last.toUpperCase()}",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
@@ -66,7 +66,7 @@ class _HomeState extends State<Home> {
             onPressed: () async {
               await ThemeModeBuilderConfig.toggleTheme();
             },
-            child: Text(
+            child: const Text(
               'Toggle Theme',
             ),
           ),
@@ -80,8 +80,8 @@ class _HomeState extends State<Home> {
             children: <Widget>[
               /// changes theme to light mode
               ElevatedButton.icon(
-                icon: Icon(Icons.phone_android),
-                label: Text(
+                icon: const Icon(Icons.phone_android),
+                label: const Text(
                   "System Mode",
                 ),
                 onPressed: () async {
@@ -94,8 +94,8 @@ class _HomeState extends State<Home> {
 
               /// changes theme to darl mode
               ElevatedButton.icon(
-                icon: Icon(Icons.lightbulb),
-                label: Text(
+                icon: const Icon(Icons.lightbulb),
+                label: const Text(
                   "Light Mode",
                 ),
                 onPressed: () async {
@@ -108,8 +108,8 @@ class _HomeState extends State<Home> {
 
               /// changes theme to darl mode
               ElevatedButton.icon(
-                icon: Icon(Icons.lightbulb_outline),
-                label: Text(
+                icon: const Icon(Icons.lightbulb_outline),
+                label: const Text(
                   "Dark Mode",
                 ),
                 onPressed: () async {

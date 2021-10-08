@@ -17,6 +17,6 @@ dependencies:
   provider: ^6.0.1
 
 dev_dependencies:
-  lint: ^1.5.3
+  flutter_lints: ^1.0.4
 
 flutter:

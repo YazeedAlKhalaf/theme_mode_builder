@@ -1,4 +1,4 @@
-include: package:lint/analysis_options_package.yaml
+include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
@@ -7,3 +7,12 @@ linter:
 
     # Utility classes are awesome
     avoid_classes_with_only_static_members: false
+
+    always_specify_types: true
+
+    prefer_const_constructors: true
+
+analyzer:
+  errors:
+    prefer_const_constructors: error
+    always_specify_types: error
