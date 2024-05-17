@@ -8,6 +8,7 @@ Future<void> main() async {
 
   /// initialize theme mode builder
   await ThemeModeBuilderConfig.ensureInitialized(
+    /// included for backward compatibility with old versions :D
     subDir: "Theme Mode Builder Example",
   );
 

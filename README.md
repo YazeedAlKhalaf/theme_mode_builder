@@ -18,7 +18,6 @@
 - 🚀 Cross platform: mobile, desktop, browser
 - ❤ Simple, powerful, intuitive API
 - 🛡 Null Safety
-- 🎈 **No** native dependencies
 - 🔋 Batteries included
 
 ## 📚 How to Use
@@ -48,9 +47,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   /// initialize theme mode builder
-  await ThemeModeBuilderConfig.ensureInitialized(
-    subDir: "Theme Mode Builder Example",
-  );
+  await ThemeModeBuilderConfig.ensureInitialized();
 
   /// Runs the app :)
   runApp(MyCoolApp());
@@ -78,15 +75,22 @@ class MyCoolApp extends StatelessWidget {
           /// here is the `themeMode` passed form the `builder`
           themeMode: themeMode,
           theme: ThemeData(
-            brightness: Brightness.light,
+            colorScheme: ColorScheme.fromSeed(
+              brightness: Brightness.light,
+              seedColor: Colors.red,
+            ),
 
             /// put your light theme data here
           ),
           darkTheme: ThemeData(
-            brightness: Brightness.dark,
+            colorScheme: ColorScheme.fromSeed(
+              brightness: Brightness.dark,
+              seedColor: Colors.deepPurple,
+            ),
 
             /// put your dark theme data here
           ),
+          home: Home(),
         );
       },
     );

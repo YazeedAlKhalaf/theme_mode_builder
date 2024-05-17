@@ -15,14 +15,18 @@ class ThemeModeBuilderExampleApp extends StatelessWidget {
           /// here is the `themeMode` passed form the `builder`
           themeMode: themeMode,
           theme: ThemeData(
-            brightness: Brightness.light,
-            primarySwatch: Colors.red,
+            colorScheme: ColorScheme.fromSeed(
+              brightness: Brightness.light,
+              seedColor: Colors.red,
+            ),
 
             /// put your light theme data here
           ),
           darkTheme: ThemeData(
-            brightness: Brightness.dark,
-            primarySwatch: Colors.deepPurple,
+            colorScheme: ColorScheme.fromSeed(
+              brightness: Brightness.dark,
+              seedColor: Colors.deepPurple,
+            ),
 
             /// put your dark theme data here
           ),
