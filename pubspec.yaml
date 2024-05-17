@@ -12,9 +12,12 @@ dependencies:
   flutter:
     sdk: flutter
 
-  hive: ^2.2.3
-  hive_flutter: ^1.1.0
+  shared_preferences: ^2.2.3
   provider: ^6.1.2
+
+  # used just to delete the old hive box :D
+  path_provider: ^2.1.3
+  path: ^1.9.0
 
 dev_dependencies:
   flutter_test:

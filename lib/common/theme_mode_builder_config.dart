@@ -1,109 +1,95 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:theme_mode_builder/common/constants.dart';
-import 'package:theme_mode_builder/services/hive_storage_service.dart';
-import 'package:theme_mode_builder/theme_mode_builder/theme_mode_builder.dart';
+import 'package:path/path.dart' as path_helper;
+import 'package:path_provider/path_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:theme_mode_builder/services/theme_storage_service.dart';
 
 /// [ThemeModeBuilderConfig] is a utility class where you can configure
 /// the [ThemeModeBuilder] and change theme or check if the theme is dark.
-class ThemeModeBuilderConfig {
-  /// [ensureInitialized] initialized the [HiveStorageService]
+class ThemeModeBuilderConfig extends ChangeNotifier {
+  static late ThemeStorageService _themeStorageService;
+
+  static final ThemeModeBuilderConfig _instance =
+      ThemeModeBuilderConfig._internal();
+
+  /// [ThemeModeBuilderConfig] factory singleton provider.
+  factory ThemeModeBuilderConfig() {
+    return _instance;
+  }
+
+  ThemeModeBuilderConfig._internal();
+
+  /// [ensureInitialized] initialized the [ThemeStorageService]
   ///
-  /// You could provide a [subDir] where the boxes should be stored, else the
-  /// boxes will be in the documents directory.
-  /// So for example if [subDir] is `Theme Mode Builder Example`, the directory
-  /// where the boxes will be saved is `~/Documents/Theme Mode Builder Example`.
+  /// The [subDir] will now be deleting the directory of the theme storage, if it exists.
   static Future<void> ensureInitialized({
     String? subDir,
   }) async {
-    await HiveStorageService().init(
-      subDir: subDir,
-    );
+    if (subDir != null) {
+      if (kIsWeb) return;
+
+      final Directory appDir = await getApplicationDocumentsDirectory();
+      final String pathToDelete = path_helper.join(appDir.path, subDir);
+      final Directory dir = Directory(pathToDelete);
+      if (await dir.exists()) {
+        await dir.delete(recursive: true);
+      }
+    }
+
+    final SharedPreferences sharedPrefs = await SharedPreferences.getInstance();
+    _themeStorageService = ThemeStorageService(sharedPreferences: sharedPrefs);
+    _themeStorageService.addListener(() {
+      _instance.notifyListeners();
+    });
   }
 
-  /// [isDarkTheme] check if the current theme mode is dark or not and returns
+  /// [themeStorageService] returns the instance of the [ThemeStorageService].
+  static ThemeStorageService get themeStorageService => _themeStorageService;
+
+  /// [isDarkTheme] checks if the current theme mode is dark or not and returns
   /// the value as a `bool`.
-  ///
-  /// Thw two possible values:
-  /// * true (dark)
-  /// * false (light)
   static bool isDarkTheme() {
-    final Box<bool> themeBox = HiveStorageService().getBox<bool>(
-      boxName: Constants.themeBox,
-    );
-
-    final bool? isDarkTheme = themeBox.get(
-      Constants.isDarkKey,
-    );
-
-    return isDarkTheme ?? false;
+    return getThemeMode() == ThemeMode.dark;
   }
 
-  /// [toggleTheme] toggles the theme between the two possible values.
+  /// [toggleTheme] toggles the theme between two values.
   ///
-  /// Thw two possible values:
-  /// * dark (true)
-  /// * light (false)
+  /// The two values:
+  /// * dark
+  /// * light
   static Future<void> toggleTheme() async {
-    final Box<bool> themeBox = HiveStorageService().getBox<bool>(
-      boxName: Constants.themeBox,
-    );
-
-    await themeBox.put(
-      Constants.isDarkKey,
-      !isDarkTheme(),
-    );
+    final ThemeMode themeMode = getThemeMode();
+    switch (themeMode) {
+      case ThemeMode.system:
+      case ThemeMode.light:
+        await setDark();
+        break;
+      case ThemeMode.dark:
+        await setLight();
+        break;
+    }
   }
 
-  /// [setDark] changes the theme to dark.
+  /// [setDark] changes the theme mode to dark.
   static Future<void> setDark() async {
-    final Box<bool> themeBox = HiveStorageService().getBox<bool>(
-      boxName: Constants.themeBox,
-    );
-    await themeBox.put(
-      Constants.isDarkKey,
-      true,
-    );
+    await _themeStorageService.setThemeMode(ThemeMode.dark);
   }
 
-  /// [setLight] changes the theme to light.
+  /// [setLight] changes the theme mode to light.
   static Future<void> setLight() async {
-    final Box<bool> themeBox = HiveStorageService().getBox<bool>(
-      boxName: Constants.themeBox,
-    );
-    await themeBox.put(
-      Constants.isDarkKey,
-      false,
-    );
+    await _themeStorageService.setThemeMode(ThemeMode.light);
   }
 
-  /// [setSystem] deletes the key of dark mode.
+  /// [setSystem] changes the theme mode to system.
   static Future<void> setSystem() async {
-    final Box<bool> themeBox = HiveStorageService().getBox<bool>(
-      boxName: Constants.themeBox,
-    );
-    await themeBox.delete(
-      Constants.isDarkKey,
-    );
+    await _themeStorageService.setThemeMode(ThemeMode.system);
   }
 
   /// [getThemeMode] returns the theme mode based on the saved value.
   static ThemeMode getThemeMode() {
-    final Box<bool> themeBox = HiveStorageService().getBox<bool>(
-      boxName: Constants.themeBox,
-    );
-
-    final bool? isDarkMode = themeBox.get(
-      Constants.isDarkKey,
-    );
-
-    switch (isDarkMode) {
-      case true:
-        return ThemeMode.dark;
-      case false:
-        return ThemeMode.light;
-      default:
-        return ThemeMode.system;
-    }
+    return _themeStorageService.getThemeMode();
   }
 }
