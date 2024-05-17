@@ -1,5 +1,7 @@
 ## [unreleased] - unreleased
 
+## [2.0.0] - 17 May, 2024
+
 - Make package work with flutter `3.22.0`
 - Upgrade all dependencies to latest versions.
 - BREAKING: people will have to choose their theme again, we now delete the hive box and we have ditched hive and we are using shared preferences. For you as a developer, nothing should change but it will be a small inconvenience for the users.
