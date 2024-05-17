@@ -1,9 +1,9 @@
 name: theme_mode_builder_example
 description: Demonstrates how to use the theme_mode_builder plugin.
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+publish_to: "none"
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=3.4.0 <4.0.0'
 
 dependencies:
   flutter:

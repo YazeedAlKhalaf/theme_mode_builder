@@ -5,21 +5,21 @@ version: 1.0.2
 homepage: https://github.com/YazeedAlKhalaf/theme_mode_builder
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=3.4.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  hive: ^2.0.4
+  hive: ^2.2.3
   hive_flutter: ^1.1.0
-  provider: ^6.0.1
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^1.0.4
+  flutter_lints: ^4.0.0
 
 flutter:

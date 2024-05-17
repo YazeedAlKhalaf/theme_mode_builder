@@ -1,5 +1,8 @@
 ## [unreleased] - unreleased
 
+- Make package work with flutter `3.22.0`
+- Upgrade all dependencies to latest versions.
+
 ## [1.0.2] - 2 Jul, 2021
 
 - Fix README.md image logo.

@@ -16,9 +16,9 @@ class ThemeModeBuilder extends StatelessWidget {
 
   /// [ThemeModeBuilder] constructor, you need to provide the [builder].
   const ThemeModeBuilder({
-    Key? key,
+    super.key,
     required this.builder,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
